@@ -11,10 +11,10 @@ const ShareButton = ({ url, title, description }) => {
             const image = [new File([blob], 'image.jpg', {
                 type: blob.type,
             })]
-            const message = encodeURI(`${title} \n${description}\nLink to image : ${url}\n`);
+            const message = (`${title} \n${description}\nLink to image : ${url}\n`).toString();
 
             shareData = {
-                //url: message,
+                url: message,
                 description:description,
                 title: title,
                 text: message,
