@@ -17,6 +17,7 @@ export const Modal = ({url,description,title}) => {
                     </div>
                 </div>
             </div>
+             {/*<button className="" data-bs-toggle="modal" data-bs-target="#share">Share</button>*/}
         </div>
     )
 }

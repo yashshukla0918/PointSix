@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar";
 import './App.css'
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Modal } from "./Components/Modal";
+import ShareButton from "./Components/ShareButton";
 
 function App() {
 
@@ -11,12 +12,13 @@ function App() {
 
 
 
+  
   function getRandomImage() {
     let random = Math.floor(Math.random() * 300) + 1;
     // setRandom(getRandomInt());
     let x = `https://picsum.photos/id/${random}/200/300`
     axios.get(x)
-      .then((res) => { if (res.status == 200) { setSrc(x) } })
+      .then((res) => { if (res.status === 200) { setSrc(x) } })
       .catch((err) => {
         getRandomImage()
         console.error(err);
@@ -69,7 +71,8 @@ function App() {
                     <i class="fa fa-refresh" aria-hidden="true"></i>
                   </button>
                   </div>
-                    <div className="col-sm-10 p-0"><button className="btn btn-outline-success my-2 form-control" data-bs-toggle="modal" data-bs-target="#share">Share</button></div>
+                    <div className="col-sm-10 p-0"><ShareButton url={src}/></div>
+                 
                   </center>
                 </div>
               </div>
