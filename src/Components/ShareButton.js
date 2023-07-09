@@ -11,8 +11,9 @@ const ShareButton = ({ url, title, description}) => {
             const image = [new File([blob], 'image.jpg', {
                 type: blob.type,
             })]
+            const message =`${title} \n${description}\nLink to image : ${url}\n`;
             shareData = {
-                url: url,
+                url: message,
                 title: title,
                 text: description,
                 files: image
