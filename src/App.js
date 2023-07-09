@@ -58,7 +58,7 @@ function App() {
       </Helmet>
       <Navbar />
       <div className="container-fluid ">
-        <div className="row text-center my-5">
+        <div className="row text-center my-3">
           <div className="col-sm-4"></div>
           <div className="col-sm-5 text-center">
             <center>

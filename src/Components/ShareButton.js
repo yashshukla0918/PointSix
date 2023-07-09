@@ -1,7 +1,8 @@
-import React from 'react'
-
-const ShareButton = ({ url, title, description}) => {
-
+import React, { useState } from 'react'
+import { BrowserView, MobileView } from "react-device-detect";
+import { FacebookShareButton,FacebookIcon, WhatsappShareButton,WhatsappIcon, TwitterShareButton, TwitterIcon } from "react-share";
+const ShareButton = ({ url, title, description }) => {
+    const [message,setMessage]= useState()
     const handleShare = async () => {
         let shareData = undefined
         try {
@@ -11,7 +12,7 @@ const ShareButton = ({ url, title, description}) => {
             const image = [new File([blob], 'image.jpg', {
                 type: blob.type,
             })]
-            const message =`${title} \n${description}\nLink to image : ${url}\n`;
+            setMessage(encodeURI(`${title} \n${description}\nLink to image : ${url}\n`));
             shareData = {
                 url: message,
                 title: title,
@@ -39,7 +40,16 @@ const ShareButton = ({ url, title, description}) => {
     }
 
     return (
-        <button className='btn btn-outline-success my-2 form-control' onClick={handleShare}>Share</button>
+        <>
+            <BrowserView>
+                <button className='btn btn-primary form-control my-1'><FacebookShareButton picture={url} url={url} title={title} quote={description}><FacebookIcon size={20} round/> Share on Facebook</FacebookShareButton></button><br/>
+                <button className='btn btn-success w-100 my-1'><WhatsappShareButton url={url} title={title}><WhatsappIcon size={20} round/> Share on WhatsApp</WhatsappShareButton></button><br/>
+                <button className='btn btn-info w-100 my-1'><TwitterShareButton  url={url}  title={title}><TwitterIcon size={20} round/> Share on Twitter</TwitterShareButton></button>
+            </BrowserView>
+            <MobileView>
+                <button className='btn btn-outline-success my-2 form-control' onClick={handleShare}>Share</button>
+            </MobileView>
+        </>
     )
 }
 export default ShareButton
