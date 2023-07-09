@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { BrowserView, MobileView } from "react-device-detect";
 import { FacebookShareButton,FacebookIcon, WhatsappShareButton,WhatsappIcon, TwitterShareButton, TwitterIcon } from "react-share";
 const ShareButton = ({ url, title, description }) => {
-    const [message,setMessage]= useState()
     const handleShare = async () => {
         let shareData = undefined
         try {
@@ -12,7 +11,8 @@ const ShareButton = ({ url, title, description }) => {
             const image = [new File([blob], 'image.jpg', {
                 type: blob.type,
             })]
-            setMessage(encodeURI(`${title} \n${description}\nLink to image : ${url}\n`));
+            const message = encodeURI(`${title} \n${description}\nLink to image : ${url}\n`);
+
             shareData = {
                 url: message,
                 title: title,
