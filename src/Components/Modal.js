@@ -11,7 +11,7 @@ export const Modal = ({url,description,title}) => {
                     <div className="modal-body">
                         <div className='row text-center'>
                             <div className="col-md-4"><a href={`https://www.facebook.com/sharer/sharer.php?u=${url}&description=${description}&picture=${url}&caption=${title}`} target='_blank'><i className="fa fa-facebook" aria-hidden="true"></i><br/>Facebook</a></div>
-                            <div className="col-md-4"><a href={`https://web.whatsapp.com/send?text=${title+'\n'+description+'\n'+url}`} target='_blank'><i className="fa fa-whatsapp" aria-hidden="true"></i><br/>WhatsApp</a></div>
+                            <div className="col-md-4"><a href={`whatapp:/send?text=${title+'\n'+description+'\n'+url}`} target='_blank'><i className="fa fa-whatsapp" aria-hidden="true"></i><br/>WhatsApp</a></div>
                             <div className="col-md-4"><a href={`https://twitter.com/intent/tweet?url=${url}&text=${encodeURI(title+'\n'+'\n'+description+'\n')}`} target='_blank'><i className="fa fa-twitter" aria-hidden="true"></i><br/>Twitter</a></div>
                         </div>
                     </div>
