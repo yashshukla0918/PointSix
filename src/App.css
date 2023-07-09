@@ -1,0 +1,14 @@
+body{
+    background-color: #EDF3F9;
+}
+
+.emboss{
+    /* width: max-content; */
+    max-width: 70%;
+    height: max-content;
+    padding: 0.5rem;
+    background-color:#EDF3F9 ;
+    box-shadow: -7px -7px 16px 0 #FFFFFF, 7px 7px 10px -4px rgba(112, 148, 179, 0.27);
+    margin-bottom: 1rem;
+    display: block;
+}
