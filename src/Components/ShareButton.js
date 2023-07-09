@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BrowserView, MobileView } from "react-device-detect";
 import { FacebookShareButton,FacebookIcon, WhatsappShareButton,WhatsappIcon, TwitterShareButton, TwitterIcon } from "react-share";
 
