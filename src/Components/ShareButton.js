@@ -11,13 +11,11 @@ const ShareButton = ({ url, title, description }) => {
             const image = [new File([blob], 'image.jpg', {
                 type: blob.type,
             })]
-            const message = (`${title} \n${description}\nLink to image : ${url}\n`).toString();
 
             shareData = {
-                url: message,
-                description:description,
-                title: title,
-                text: message,
+                url: url,
+                title: "Random Image",
+                text: "Random Image Assignment",
                 files: image
             }
 
