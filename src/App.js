@@ -3,6 +3,7 @@ import axios from "axios";
 import Navbar from "./Components/Navbar";
 import './App.css'
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Modal } from "./Components/Modal";
 
 function App() {
 
@@ -68,7 +69,7 @@ function App() {
                     <i class="fa fa-refresh" aria-hidden="true"></i>
                   </button>
                   </div>
-                    <div className="col-sm-10 p-0"><button className="btn btn-outline-success my-2 form-control">Share</button></div>
+                    <div className="col-sm-10 p-0"><button className="btn btn-outline-success my-2 form-control" data-bs-toggle="modal" data-bs-target="#share">Share</button></div>
                   </center>
                 </div>
               </div>
@@ -77,8 +78,9 @@ function App() {
           <div className="col-sm-3"></div>
         </div>
       </div>
-
+      <Modal  url={src} description={"Random Image Assignment"} title={"Random Image"} />
     </HelmetProvider>
+
   );
 }
 
