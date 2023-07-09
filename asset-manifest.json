@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/PointSix/static/css/main.3e61082b.css",
-    "main.js": "/PointSix/static/js/main.9c0b09cd.js",
+    "main.js": "/PointSix/static/js/main.a263ac69.js",
     "static/js/787.cda612ba.chunk.js": "/PointSix/static/js/787.cda612ba.chunk.js",
     "index.html": "/PointSix/index.html",
     "main.3e61082b.css.map": "/PointSix/static/css/main.3e61082b.css.map",
-    "main.9c0b09cd.js.map": "/PointSix/static/js/main.9c0b09cd.js.map",
+    "main.a263ac69.js.map": "/PointSix/static/js/main.a263ac69.js.map",
     "787.cda612ba.chunk.js.map": "/PointSix/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3e61082b.css",
-    "static/js/main.9c0b09cd.js"
+    "static/js/main.a263ac69.js"
   ]
 }
