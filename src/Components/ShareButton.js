@@ -14,7 +14,7 @@ const ShareButton = ({ url, title, description }) => {
             const message = encodeURI(`${title} \n${description}\nLink to image : ${url}\n`);
 
             shareData = {
-                url: message,
+                // url: message,
                 title: title,
                 text: description,
                 files: image
@@ -42,7 +42,7 @@ const ShareButton = ({ url, title, description }) => {
     return (
         <>
             <BrowserView>
-                <button className='btn btn-primary form-control my-1'><FacebookShareButton picture={url} url={url} title={title} quote={description}><FacebookIcon size={20} round/> Share on Facebook</FacebookShareButton></button><br/>
+                <button className='btn btn-primary form-control my-1'><FacebookShareButton image={url}  quote={title}><FacebookIcon size={20} round/> Share on Facebook</FacebookShareButton></button><br/>
                 <button className='btn btn-success w-100 my-1'><WhatsappShareButton url={url} title={title}><WhatsappIcon size={20} round/> Share on WhatsApp</WhatsappShareButton></button><br/>
                 <button className='btn btn-info w-100 my-1'><TwitterShareButton  url={url}  title={title}><TwitterIcon size={20} round/> Share on Twitter</TwitterShareButton></button>
             </BrowserView>
