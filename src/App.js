@@ -7,31 +7,45 @@ import ShareButton from "./Components/ShareButton";
 
 function App() {
 
+  //SRC for image source 
   const [src, setSrc] = useState()
-  
+
+
+  //getting random image url from the api 
   function getRandomImage() {
     let random = Math.floor(Math.random() * 300) + 1;
-    // setRandom(getRandomInt());
-    let x = `https://picsum.photos/id/${random}/200/300`
-    axios.get(x)
+    let imgURL = `https://picsum.photos/id/${random}/200/300`
+
+    //checking if image url exists or not 
+    /*
+      200 status code for exists
+    */ 
+    axios.get(imgURL)
       .then((res) => {
         if (res.status === 200) {
-          setSrc(x)
+          setSrc(imgURL)
         }
       })
+      /*
+      if url is not valid
+      then again get random image url
+      */
       .catch((err) => {
         getRandomImage()
         console.error(err);
       })
   }
 
-
+ // initial execution
   useEffect(() => {
     getRandomImage()
   }, [])
 
 
   return (
+    /*
+    Meta tags provides
+    */
     <HelmetProvider>
       <Helmet prioritizeSeoTags>
 
@@ -67,11 +81,13 @@ function App() {
                 <div className="row ">
                   <center>
                     <div className="col-sm-2 p-0">
+                    {/* Refreshing new random image */}
                       <button className="btn btn-outline-dark my-2" onClick={getRandomImage}>
                         <i className="fa fa-refresh" aria-hidden="true"></i>
                       </button>
                     </div>
                     <div className="col-sm-10 p-0">
+                    {/*Dynamic share button*/}
                       <ShareButton
                         url={src}
                         title={'Random Image'}
